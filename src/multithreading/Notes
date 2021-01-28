@@ -30,3 +30,5 @@ Processes and Threads
 
   ->2.a
         1.By extending the thread class.
+        2.By implementing the Runnable interface and creating the thread object by passing the instance of runnable
+        interface.

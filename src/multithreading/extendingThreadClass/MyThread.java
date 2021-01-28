@@ -1,5 +1,7 @@
 package multithreading.extendingThreadClass;
 
+
+//returns the prime number upto the number we have specified
 public class MyThread extends Thread{
     private long maxPrime;
     MyThread(long maxPrime){
@@ -13,7 +15,7 @@ public class MyThread extends Thread{
                 System.out.println(i);
         }
     }
-    public boolean isPrime(long number){
+    private boolean isPrime(long number){
         long sqrtNumber = (long) Math.sqrt(number);
         for(long i=2;i<=sqrtNumber;i++){
             if(number % i == 0)

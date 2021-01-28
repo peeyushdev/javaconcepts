@@ -27,3 +27,6 @@ Processes and Threads
     2.Two ways to create thread
         a.Directly manage and create the instance of thread class every time we need to create asynchronous task.
         b.Abstract the thread creation and pass the application task to executor.(Will see this later).
+
+  ->2.a
+        1.By extending the thread class.

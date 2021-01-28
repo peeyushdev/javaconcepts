@@ -1,0 +1,29 @@
+Concurrency
+->java.util.concurrent (PACKAGE)
+    1.Software that can perform multiple operations at a time are called concurrent software.
+        For Ex-> Word Processor will always respond to mouse and keyboard events irrespective how busy it might be in
+        formatting the content.
+    2.Java Platform is built to support concurrent programming.
+
+Processes and Threads
+    1.A system always has active processes and thread. This is true for single core system also.
+    2.In single core system only one thread executes at a time,all the thread share the single core of system via OS
+        feature i.e Time Slicing.
+->Processes
+    1.Processes are often called programs or application.
+    2.Each process has its own memory space.
+    3.Communication b/w processes is done via Inter Process Communication(IPC), like pipes,sockets.
+    4.In java we can create process using ProcessBuilder.
+
+->Thread
+    1.Threads are lightweight processes.
+    2.All threads share the resources of a particular process they belong too.
+    3.Creating a thread require less resources.
+    4.Every Process has atleast one thread.
+    5.By default Java Application has one thread called main thread that is capable of creating more threads.
+
+-->Threads In Java
+    1.Every thread in java is the instance of Thread Class.
+    2.Two ways to create thread
+        a.Directly manage and create the instance of thread class every time we need to create asynchronous task.
+        b.Abstract the thread creation and pass the application task to executor.(Will see this later).

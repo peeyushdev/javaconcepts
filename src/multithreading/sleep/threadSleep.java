@@ -1,6 +1,7 @@
 package multithreading.sleep;
 
 
+import multithreading.constants.Constants;
 
 /*
 * Thread.sleep() is a static method.
@@ -9,13 +10,7 @@ package multithreading.sleep;
 * max value we can supply to nanosecond is 999999*/
 public class threadSleep {
     public static void main(String[] args) throws InterruptedException{
-        String[] stringArray = {
-                "Hello",
-                "How are you?",
-                "I am fine and what about you?",
-                "I am also good thanks for asking."
-        };
-        for(String string : stringArray){
+        for(String string : Constants.stringArray){
             System.out.println("Sleep starts: "+System.currentTimeMillis());
             Thread.sleep(4000); //throws InterruptedException // sleep for 4 millisecond
             System.out.println("Sleep ends: "+System.currentTimeMillis());

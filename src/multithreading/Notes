@@ -54,3 +54,19 @@ Note-> In both the cases we need to call thread class start() to start the new t
         3.Two overloaded methods of sleep are there one specifies the time in millisecond and other in nanosecond.
 Note-> Thread.sleep() throws InterruptedException, when any other thread is interrupts the current thread while sleep
         is active.
+
+->Interrupts
+        1.Interrupt is a signal to thread that it should stop doing whatever it is doing and should do something else.
+        2.There are some methods like sleep that send the InterruptedException and cancel the execution of thread as soon
+            as interrupt is received.
+->Note on Point 2.
+    What is thread executes where for a long time there is no method that throws interrupted exception?
+        then it should priodically check Thread.interrupted() which return true if any interrupt is being received.
+
+->Interrupt Status
+        1.Internal flag to keep the interrupted status of a thread.
+interrupted() vs isInterrupted()
+    1.interrupted() is a static method and it return true/false based on thread received interrupt or not but more
+    importantly it clears the interrupted Status of that thread.
+    2.whereas isInterrupted() is non-static method and returns interrupt status of thread but doesn't clear the
+        interrupt status of the thread.

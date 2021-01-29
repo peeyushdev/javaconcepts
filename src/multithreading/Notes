@@ -21,14 +21,36 @@ Processes and Threads
     3.Creating a thread require less resources.
     4.Every Process has atleast one thread.
     5.By default Java Application has one thread called main thread that is capable of creating more threads.
+    6.Every thread has some priority and thread are executed based on there priority,by default new thread is given same
+       priority as the thread which created the new thread.
+    7.Every thread has name identifier, by default "Thread-number" is name of thread but we can assign any name using
+    setName() and using getName() we can verify the same.
 
--->Threads In Java
+-->Threads Creation In Java
     1.Every thread in java is the instance of Thread Class.
     2.Two ways to create thread
         a.Directly manage and create the instance of thread class every time we need to create asynchronous task.
         b.Abstract the thread creation and pass the application task to executor.(Will see this later).
 
   ->2.a
-        1.By extending the thread class.
-        2.By implementing the Runnable interface and creating the thread object by passing the instance of runnable
-        interface.
+        1.By subclassing the Thread class which itself implements the Runnable interface.
+        2.By providing the Runnable object.
+  ->Runnable Interface
+        1.Runnable interface has only one method run(), which the intended task that should be executed when thread is
+        active.
+        2.Passing the runnable object as a target to the Thread class, by target it is meant to be the runnable object
+        that has run() i.e. the task to be run once thread is active.
+  ->Thread Class
+        1.Thread class has various other methods apart from run() which are used by other thread to manage the thread
+        object and provide some useful information about the thread object.
+        2.This is the easier way but this approach should be used only when we want to override some other methods of
+        thread class.
+Note-> In both the cases we need to call thread class start() to start the new thread which internally calls the run()
+    of Runnable object.(Target)
+
+->Sleep
+        1.Calling this method causes current thread to suspend the execution for some time.
+        2.By this we can make processor available to some other thread of application or other application.
+        3.Two overloaded methods of sleep are there one specifies the time in millisecond and other in nanosecond.
+Note-> Thread.sleep() throws InterruptedException, when any other thread is interrupts the current thread while sleep
+        is active.

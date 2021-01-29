@@ -1,23 +1,25 @@
 package multithreading.implementingRunnableInterface;
 
 
-public class MyThread implements  Runnable{
+public class MyThread implements Runnable {
     private long maxPrime;
 
-    MyThread(long maxPrime){
-        this.maxPrime=maxPrime;
+    MyThread(long maxPrime) {
+        this.maxPrime = maxPrime;
     }
+
     @Override
     public void run() {
-        for(int i=2;i<=maxPrime;i++){
-            if(isPrime(i))
+        for (int i = 2; i <= maxPrime; i++) {
+            if (isPrime(i))
                 System.out.println(i);
         }
     }
-    private boolean isPrime(long number){
+
+    private boolean isPrime(long number) {
         long sqrtNumber = (long) Math.sqrt(number);
-        for(int i=2;i<=sqrtNumber;i++){
-            if(number%i==0)
+        for (int i = 2; i <= sqrtNumber; i++) {
+            if (number % i == 0)
                 return false;
         }
         return true;
@@ -27,5 +29,6 @@ public class MyThread implements  Runnable{
         MyThread myThread = new MyThread(30); //creating instance of MyThread class
         Thread thread = new Thread(myThread); //passing MyThread class instance to Thread class
         thread.start();//starting the thread
+        System.out.println(thread.getName());
     }
 }

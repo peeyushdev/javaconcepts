@@ -79,3 +79,11 @@ interrupted() vs isInterrupted()
     Situation when InterruptedException is thrown
         a.When we call interrupt() before the thread is waiting or sleeping.
         b.when we call interrupt() during the thread is waiting or sleeping.
+
+->Synchronization
+    1.Thread communicate with each other by sharing the common objects,variables.
+    2.But this may lead to error , avoiding those error can be done via synchronization.
+  ->Types of Error
+    a.Thread Interference -> describe how error can be introduced when thread access shared data.
+    b.Memory Inconsistency Error -> results of inconsistent view of share memory.
+

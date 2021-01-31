@@ -70,3 +70,12 @@ interrupted() vs isInterrupted()
     importantly it clears the interrupted Status of that thread.
     2.whereas isInterrupted() is non-static method and returns interrupt status of thread but doesn't clear the
         interrupt status of the thread.
+->join()
+    1.Allows one thread to wait for other thread to complete its execution.
+    2.It also throws InterruptedException like sleep and it is also overloaded where we can pass the time for how long
+        it should wait for the other thread to complete it execution.
+->Note
+    When join() and sleep() method throw InterruptedException the interrupted status flag is cleared.
+    Situation when InterruptedException is thrown
+        a.When we call interrupt() before the thread is waiting or sleeping.
+        b.when we call interrupt() during the thread is waiting or sleeping.

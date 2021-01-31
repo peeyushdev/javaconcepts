@@ -14,7 +14,11 @@ public class PrintMessageThread implements Runnable {
     public void run() {
         try {
             for (String string : Constants.stringArray) {
-                Thread.sleep(50);
+                if(Thread.currentThread().isInterrupted()){
+                    /*since we are checking the interrupted status before sleep() this if block will be executed*/
+                    System.out.println("print thread is interrupted and intrrupted flag is true");
+                }
+                Thread.sleep(20);
                 System.out.println(Thread.currentThread().getName() + "printed " + string);
             }
         } catch (Exception e) {

@@ -106,3 +106,10 @@ interrupted() vs isInterrupted()
     4.But this doesn't mean that atomic actions are not required to be synchronised.
     5.Because there is still a chance of memory inconsistency but using volatile variable some what reduces these changes
         as volatile variable build happens-before relations on subsequent read of that variable.
+
+->Synchronised
+    1.Multiple thread on same object have to wait for synchronized method, block to execute while any of the thread has
+    acquired a lock on that method.
+    2.If there are multiple synchronised method or blocks then at a time only one thread any of the one method only.
+//synchronized update
+//StringBuild vs StringBuffer

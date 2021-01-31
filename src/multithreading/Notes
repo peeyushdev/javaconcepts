@@ -87,3 +87,22 @@ interrupted() vs isInterrupted()
     a.Thread Interference -> describe how error can be introduced when thread access shared data.
     b.Memory Inconsistency Error -> results of inconsistent view of share memory.
 
+->Intrinsic Locks and Synchronization
+    1.Synchronization is based in internal entity intrinsic lock.
+    2.This lock helps in building happens-before relationship and visibility.
+    3.Solve both the Thread Interference and memory inconsistency.
+    4.When any tried to access any synchronized method or variable it has to acquire the object's intrinsic lock.
+    5.for accessing static field of the class thread has to acquire the class intrinsic lock.
+    6.If the intrinsic lock is not available then all the threads has to wait for the lock to get free.
+
+->Atomic Access
+    1.Atomic Actions are the one which effectively happens at once.
+    2.Even simple expressions like increment/decrement does not describe atomic actions.
+
+  ->Some actions that are atomic
+    1.Read and write for referenced variable and primitive variable except(long and double)
+    2.Read and write for all variables declared volatile.
+    3.Atomic actions can't be interleaved so can be use without the fear of thread interference.
+    4.But this doesn't mean that atomic actions are not required to be synchronised.
+    5.Because there is still a chance of memory inconsistency but using volatile variable some what reduces these changes
+        as volatile variable build happens-before relations on subsequent read of that variable.

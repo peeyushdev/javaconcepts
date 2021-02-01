@@ -1,3 +1,8 @@
+/*
+* When one thread(thread-1) is inside synchronous method of one object(o1)
+* and other thread(thread-2) is inside synchronous method of other object(o2)
+* then if thread-1 tries to call any other synchronous method of o2
+* and at same time thread-2 tries to call any other synchronous method of o1 then deadlock will come.*/
 package multithreading.deadlock;
 
 public class Deadlock {
@@ -53,3 +58,5 @@ public class Deadlock {
  * Here Thread-0 calls bow() on peeyush object and at the same time Thread-1 calls bow() sahitya object
  * Both the thread after executing line 18 gets blocked for any of the synchronised method to execute completely
  * before they can start executing method bower.*/
+
+

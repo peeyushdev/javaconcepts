@@ -110,6 +110,8 @@ interrupted() vs isInterrupted()
 ->Synchronised
     1.Multiple thread on same object have to wait for synchronized method, block to execute while any of the thread has
     acquired a lock on that method.
-    2.If there are multiple synchronised method or blocks then at a time only one thread any of the one method only.
+    2.More than one thread on same object then only synchronized is helpful.
+
+
 //synchronized update
 //StringBuild vs StringBuffer
